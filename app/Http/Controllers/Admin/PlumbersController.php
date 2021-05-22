@@ -54,14 +54,21 @@ class PlumbersController extends Controller
 
         return redirect('admin/plumbers')->with('added', 'plumber added successfully');
     }
-    public function update(PlumberRequest $request, $id)
+
+    public function edit($id)
+    {
+        $plumber  = Plumber::find($id);
+        return view('admin.plumbers.edit', compact('plumber'));
+    
+    }
+
+    public function update(Request $request, $id)
     {
 
-        $plumber = User::find($id);
+        $plumber = Plumber::find($id);
 
         $plumber->name = $request->name;
         $plumber->email = $request->email;
-        $plumber->password = Hash::make($request->password);
         $plumber->phone_number = $request->phone_number;
         if($request->hasFile('photo')){
             $plumber->photo = $request->photo;
@@ -70,7 +77,7 @@ class PlumbersController extends Controller
 
         $plumber->save();
 
-        return redirect('admin/plumbers')->with('added', 'plumber modified successfully');
+        return redirect('admin/plumbers')->with('updated', 'plumber modified successfully');
     }
 
     /**

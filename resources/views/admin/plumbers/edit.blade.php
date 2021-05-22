@@ -8,7 +8,7 @@
         <div class="content-wrapper">
             <section class="content-header">
                 <h1>
-                    Add plumber 
+                    Edit plumber 
                 </h1>
             </section>
             <section class="content">
@@ -17,40 +17,41 @@
                 
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Forms of adding</h3>
+                            <h3 class="card-title">Forms of editing</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="{{ url('admin/plumbers') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ url('admin/plumbers/'.$plumber->id) }}" method="post" enctype="multipart/form-data">
                             @csrf
+                            @method('put')
                             <div class="card-body">
                                
                                
                                
                                 <div class="form-group">
                                     <label for="name">Name</label>
-                                    <input type="text" class="form-control" name="name" value="{{ old('name') }}" id="name" placeholder="Enter name of plumber">
+                                    <input type="text" class="form-control" name="name" value="{{ $plumber->name }}" id="name" placeholder="Enter name of plumber">
                                     @error('name')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input type="text" class="form-control" name="email" value="{{ old('email') }}" id="email" placeholder="Enter email of plumber">
+                                    <input type="text" class="form-control" name="email" value="{{ $plumber->email }}" id="email" placeholder="Enter email of plumber">
                                     @error('email')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="phone_number">Phone number</label>
-                                    <input type="text" class="form-control" name="phone_number" value="{{ old('phone_number') }}" id="phone_number" placeholder="Enter phone number of plumber">
+                                    <input type="text" class="form-control" name="phone_number" value="{{ $plumber->phone_number }}" id="phone_number" placeholder="Enter phone number of plumber">
                                     @error('phone_number')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="photo">photo of plumber</label>
-                                    <input type="file" class="form-control" name="photo" value="{{ old('photo') }}" id="photo" placeholder="Saisir photo de module">
+                                    <input type="file" class="form-control" name="photo" value="{{ $plumber->photo }}" id="photo" placeholder="Saisir photo de module">
                                     @error('photo')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
