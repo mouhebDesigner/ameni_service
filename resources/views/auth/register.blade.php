@@ -15,8 +15,8 @@
     <div class="contact wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
         <div class="container">
             <div class="section-header text-center">
-                <p>Créer un compte</p>
-                <h4>Insérez vos coordonnés pour créer  votre compte</h4>
+                <p>Create your account</p>
+                <h4>Enter your informations to create your account</h4>
             </div>
             <div class="row">
                 

@@ -5,7 +5,7 @@
             <div class="col-lg-4 col-md-12">
                 <div class="logo">
                     <a href="{{ url('/') }}">
-                        <h1>BMS</h1>
+                        <h1>OSFY</h1>
                         <!-- <img src="img/logo.jpg" alt="Logo"> -->
                     </a>
                 </div>
@@ -62,25 +62,24 @@
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav mr-auto">
                     @guest
-                    <a href="{{ url('/') }}" class="nav-item nav-link active">Accueil</a>
+                    <a href="{{ url('/') }}" class="nav-item nav-link active">Home</a>
                     @else 
-                    <a href="{{ url('/home') }}" class="nav-item nav-link active">Accueil</a>
+                    <a href="{{ url('/home') }}" class="nav-item nav-link active">Home</a>
 
                     @endif
-                    <a href="#catalogue" class="nav-item nav-link">Catalogues</a>
+                    <a href="#plumbers" class="nav-item nav-link">Plumbers</a>
                     <a href="#service" class="nav-item nav-link">Services</a>
                 </div>
                 <div class="ml-auto">
                     @guest
-                    <a class="btn btn-login" href="{{ url('login') }}">Connecter</a>
-                    <a class="btn " href="{{ url('register') }}">S'inscrire</a>
+                    <a class="btn btn-login" href="{{ url('login') }}">Login</a>
+                    <a class="btn " href="{{ url('register') }}">Register</a>
                     @else 
                         <a class="btn" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
-                            {{ __('Déconnecter') }}
-                        </a>
-
+                            {{ __('Logout') }}
+                        </a
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
