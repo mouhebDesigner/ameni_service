@@ -13,6 +13,8 @@
             </div>
             <a href="{{ url('admin/plumbers') }}" class="small-box-footer">See more<i class="fas fa-arrow-circle-right"></i></a>
         </div>
+    </div>
+    <div class="col-lg-3 col-6">
         <div class="small-box bg-info">
             <div class="inner">
             <h3>{{ App\Models\Service::count() }}</h3>
@@ -24,6 +26,10 @@
             </div>
             <a href="{{ url('admin/services') }}" class="small-box-footer">See more<i class="fas fa-arrow-circle-right"></i></a>
         </div>
+    
+    </div>
+    <div class="col-lg-3 col-6">
+    
         <div class="small-box bg-info">
             <div class="inner">
             <h3>{{ App\Models\Appointment::count() }}</h3>
