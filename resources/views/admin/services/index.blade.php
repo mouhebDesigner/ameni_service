@@ -84,7 +84,7 @@
                                                             <td>
                                                                 <div class="d-flex justify-content-around">
                                                                     <form action="{{ url('admin/services/'.$service->id) }}" method="post">
-                                                                        @csrf
+                                                                        @csrf 
                                                                         @method('delete')
                                                                         <button type="submit" class="btn-delete" onclick="return confirm('Voules-vous supprimer ce service')">
                                                                             <i class="fa fa-trash"></i>
@@ -101,19 +101,7 @@
                                                 <tfoot>
                                                     <tr>
                                                         <th>
-                                                            titre
-                                                        </th>
-                                                        <th>
-                                                            mode
-                                                        </th>
-                                                        <th>
-                                                            unité
-                                                        </th>
-                                                        <th>
-                                                            prix
-                                                        </th>
-                                                        <th>
-                                                            catalogue
+                                                            Title
                                                         </th>
                                                         <th>
                                                             date de creation
