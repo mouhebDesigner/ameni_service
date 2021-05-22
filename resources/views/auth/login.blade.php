@@ -31,14 +31,14 @@
                                 @enderror
                             </div>
                             <div class="control-group mb-2">
-                                <input type="password" class="form-control" placeholder="Mot de passe" required="required" data-validation-required-message="Please enter a subject" name="password">
+                                <input type="password" class="form-control" placeholder="Password" required="required" data-validation-required-message="Please enter a subject" name="password">
                                 @error('password')
                                 <p class="help-block text-danger">{{ $message }}</p>
                                 @enderror
                             </div>
                             
                             <div class="d-flex justify-content-center">
-                                <button class="btn" type="submit" id="sendMessageButton">Connecter</button>
+                                <button class="btn" type="submit" id="sendMessageButton">Connect</button>
                             </div>
                         </form>
                     </div>
