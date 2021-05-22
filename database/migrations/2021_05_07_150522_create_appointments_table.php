@@ -15,9 +15,10 @@ class CreateAppointmentsTable extends Migration
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
-            $table->double('espace');
-            $table->string('adresse');
-            $table->integer('num_etage');
+            $table->double('name');
+            $table->double('email');
+            $table->double('phone_number');
+            $table->double('address');
             $table->date('date');         
             $table->enum('approuver', ['oui','non'])->nullable();         
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade')->onUpdate('cascade');
