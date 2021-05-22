@@ -1,0 +1,45 @@
+:not(.layout-fixed) .main-sidebar {
+    height: 100vh;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    overflow-x: hidden !important;
+}
+
+.btn-hidden{
+    border: none !important;
+    background-color: transparent !important;
+}
+.btn-hidden .fa{
+    color: tomato;
+    transform: scale(1.8);
+}
+
+.btn-icon{
+    width: 50px;
+    height: 50px;
+    background: rgb(12, 92, 184);
+    border: 1px solid black;
+}
+
+.btn-delete{
+    border: none
+}
+.btn-delete .fa{
+    
+    color: #a84040;
+    transform: scale(1.5);
+
+}
+.fa-edit{
+    transform: scale(1.5);
+}
+#enseignant_tp{
+    display: none;
+}
+#enseignant_td{
+    display: none;
+}
+#enseignant_cours{
+    display: none;
+}
