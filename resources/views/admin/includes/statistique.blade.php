@@ -4,14 +4,36 @@
         <!-- small box -->
         <div class="small-box bg-info">
             <div class="inner">
-            <h3>{{ App\Models\User::count() }}</h3>
+            <h3>{{ App\Models\Plumber::count() }}</h3>
 
-            <p>Les Matiéres</p>
+            <p>The plumbers</p>
             </div>
             <div class="icon">
             <i class="ion ion-bag"></i>
             </div>
-            <a href="{{ url('matieres') }}" class="small-box-footer">Voir plus <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="{{ url('admin/plumbers') }}" class="small-box-footer">See more<i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+        <div class="small-box bg-info">
+            <div class="inner">
+            <h3>{{ App\Models\Service::count() }}</h3>
+
+            <p>The services</p>
+            </div>
+            <div class="icon">
+            <i class="ion ion-bag"></i>
+            </div>
+            <a href="{{ url('admin/services') }}" class="small-box-footer">See more<i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+        <div class="small-box bg-info">
+            <div class="inner">
+            <h3>{{ App\Models\Appointment::count() }}</h3>
+
+            <p>The appointments</p>
+            </div>
+            <div class="icon">
+            <i class="ion ion-bag"></i>
+            </div>
+            <a href="{{ url('admin/appointments') }}" class="small-box-footer">See more<i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
     
