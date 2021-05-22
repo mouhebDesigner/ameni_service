@@ -94,7 +94,7 @@
                                                                     <form action="{{ url('admin/plumbers/'.$plumber->id) }}" method="post">
                                                                         @csrf
                                                                         @method('delete')
-                                                                        <button type="submit" class="btn-delete" onclick="return confirm('Voules-vous supprimer ce client')">
+                                                                        <button type="submit" class="btn-delete" onclick="return confirm('Do you want to delete this plumber')">
                                                                             <i class="fa fa-trash"></i>
                                                                         </button>
                                                                     </form>
