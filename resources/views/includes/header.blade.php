@@ -18,8 +18,8 @@
                                 <i class="flaticon-calendar"></i>
                             </div>
                             <div class="top-bar-text">
-                                <h3>Horaire de travail</h3>
-                                <p>Lun - Ven 8:00h - 18:00h</p>
+                                <h3>Working hours</h3>
+                                <p>Mon - Fri 8:00h - 18:00h</p>
                             </div>
                         </div>
                     </div>
@@ -29,7 +29,7 @@
                                 <i class="flaticon-call"></i>
                             </div>
                             <div class="top-bar-text">
-                                <h3>Contacter-nous</h3>
+                                <h3>Contact-us</h3>
                                 <p>+216 25 470 729</p>
                             </div>
                         </div>
@@ -40,7 +40,7 @@
                                 <i class="flaticon-send-mail"></i>
                             </div>
                             <div class="top-bar-text">
-                                <h3>Email Nous</h3>
+                                <h3>Email-us</h3>
                                 <p>benahmedabdelhamid345@gmail.com</p>
                             </div>
                         </div>
