@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2>Page de connexion</h2>
+                    <h2>Login page</h2>
                 </div>
             </div>
         </div>
@@ -15,8 +15,7 @@
     <div class="contact wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
         <div class="container">
             <div class="section-header text-center">
-                <p>Connectez-vous</p>
-                <h4>Insérez vos coordonnés pour accéder a votre compte</h4>
+                <h4>Enter your coordinates to access to your account</h4>
             </div>
             <div class="row">
                 
