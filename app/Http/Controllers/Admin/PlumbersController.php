@@ -116,9 +116,9 @@ class PlumbersController extends Controller
      */
     public function destroy($id)
     {
-        User::find($id)->delete();
+        Plumber::find($id)->delete();
 
-        return redirect('admin/clients')->with('deleted', 'La client a été supprimer avec succés');
+        return redirect('admin/plumbers')->with('deleted', 'Plumber has deleted successfully');
         
     }
 }
