@@ -67,8 +67,10 @@
                     <a href="{{ url('/home') }}" class="nav-item nav-link active">Home</a>
 
                     @endif
-                    <a href="#plumbers" class="nav-item nav-link">Plumbers</a>
                     <a href="#service" class="nav-item nav-link">Services</a>
+                    @if(Auth::check())
+                        <a href="{{ url('appointments') }}" class="nav-item nav-link">Appointments</a>
+                    @endif
                 </div>
                 <div class="ml-auto">
                     @guest

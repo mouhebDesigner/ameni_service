@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CommandeRequest extends FormRequest
+class AppointmentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,10 @@ class CommandeRequest extends FormRequest
     public function rules()
     {
         return [
-            "espace" => "required",
-            "adresse" => "required",
-            "num_etage" => "required",
+            "name" => "required",
+            "email" => "required",
+            "phone_number" => "required",
+            "address" => "required",
             "date" => "required",
         ];
     }

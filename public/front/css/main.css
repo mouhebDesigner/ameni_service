@@ -5,4 +5,8 @@
    background: #fdbe33;
    font-weight: bold;
 }   
-    
+.alert_success{
+    background: #1b811b;
+    padding: 20px;
+    color: white;
+}

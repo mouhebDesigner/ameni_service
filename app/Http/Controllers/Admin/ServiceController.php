@@ -42,19 +42,15 @@ class ServiceController extends Controller
         $service = new service();
 
         $service->titre = $request->titre;
-        $service->mode = $request->mode;
-        $service->unité = $request->unité;
         $service->prix = $request->prix;
         $service->description = $request->description;
-        if(isset($request->voiture))
-            $service->voiture = 'oui';
 
         
         if($request->hasFile('image')){
-
             $service->image = $request->image->store('images');
         }
-        $service->catalogue_id = $request->catalogue_id;
+
+
 
         $service->save();
 
@@ -96,31 +92,23 @@ class ServiceController extends Controller
     {
         $request->validate([
             "titre" => "required",
-            "mode" => "required",
-            "unité" => "required",
             "prix" => "required",
-            "catalogue_id" => "required"
+            "description" => "required"
         ]);
         $service =  Service::find($id);
 
         $service->titre = $request->titre;
-        $service->mode = $request->mode;
-        $service->unité = $request->unité;
         $service->prix = $request->prix;
         $service->description = $request->description;
-        if(isset($request->voiture))
-            $service->voiture = 'oui';
 
         
         if($request->hasFile('image')){
-
             $service->image = $request->image->store('images');
         }
-        $service->catalogue_id = $request->catalogue_id;
 
         $service->save();
 
-        return redirect('admin/services')->with('updated', 'Le service a été modifié avec succés');
+        return redirect('admin/services')->with('updated', 'The service has modified successfully');
     }
 
     /**
@@ -132,7 +120,7 @@ class ServiceController extends Controller
     public function destroy($id)
     {
         Service::find($id)->delete();
-        return redirect('admin/services')->with('deleted', 'Le service a été supprimer avec succés');
+        return redirect('admin/services')->with('deleted', 'The service has deleted successfully');
         
     }
 }

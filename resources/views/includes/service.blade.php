@@ -18,11 +18,9 @@
                     </div>
                     <div class="service-text">
                         <h3>{{ $service->titre }}</h3>
-                        @if($service->voiture == "non")
-                        <a class="btn" href="{{ url('service/'.$service->id.'/commande') }}" >+</a>
-                        @else 
-                        <a class="btn" href="{{ url('service/'.$service->id.'/commande_voiture') }}">+</a>
-                        @endif
+                        <a class="btn" href="{{ url('service/'.$service->id.'/appointment') }}" >
+                            Request appointment
+                        </a>
                     </div>
                 </div>
             </div>

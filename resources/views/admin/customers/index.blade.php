@@ -14,7 +14,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">List of services</h1>
+                            <h1 class="m-0">Liste of customers</h1>
                         </div><!-- /.col -->
                        
                     </div>
@@ -47,9 +47,7 @@
                                                         aria-controls="example1">
                                                     </label>
                                                 </div>
-                                                <a href="{{ url('admin/services/create') }}">
-                                                    <i class="fa fa-plus"></i>
-                                                </a>
+                                           
                                             </div>
                                         </div>
                                     </div>
@@ -59,13 +57,14 @@
                                                 <thead>
                                                     <tr>
                                                         <th>
-                                                            Title
+                                                            Name
                                                         </th>
-                                                        
                                                         <th>
-                                                            Price
+                                                            Email
                                                         </th>
-
+                                                        <th>
+                                                            Phone number
+                                                        </th>
                                                         <th>
                                                             date de creation
                                                         </th>
@@ -81,24 +80,22 @@
 
                                                 </thead>
                                                 <tbody>
-                                                    @foreach($services as $service)
+                                                    @foreach($customers as $customer)
                                                         <tr>
-                                                            <td>{{ $service->titre }}</td>
-                                                            <td>{{ $service->prix }}</td>
-                                                            <td>{{ $service->created_at }}</td>
-                                                            <td>{{ $service->updated_at }}</td>
+                                                            <td>{{ $customer->name }}</td>
+                                                            <td>{{ $customer->email }}</td>
+                                                            <td>{{ $customer->phone_number }}</td>
+                                                            <td>{{ $customer->created_at }}</td>
+                                                            <td>{{ $customer->updated_at }}</td>
                                                             <td>
                                                                 <div class="d-flex justify-content-around">
-                                                                    <form action="{{ url('admin/services/'.$service->id) }}" method="post">
-                                                                        @csrf 
+                                                                    <form action="{{ url('admin/customers/'.$customer->id) }}" method="post">
+                                                                        @csrf
                                                                         @method('delete')
-                                                                        <button type="submit" class="btn-delete" onclick="return confirm('Do you want to delete this service')">
+                                                                        <button type="submit" class="btn-delete" onclick="return confirm('Do you want to delete this plumber')">
                                                                             <i class="fa fa-trash"></i>
                                                                         </button>
                                                                     </form>
-                                                                    <a href="{{ url('admin/services/'.$service->id.'/edit') }}" onclick="return confirm('Do you want to update this service')">
-                                                                        <i class="fa fa-edit"></i>
-                                                                    </a>
                                                                 </div>
                                                             </td>
                                                         </tr>
@@ -107,10 +104,13 @@
                                                 <tfoot>
                                                     <tr>
                                                         <th>
-                                                            Title
+                                                            Name
                                                         </th>
                                                         <th>
-                                                            Price
+                                                            Email
+                                                        </th>
+                                                        <th>
+                                                            Phone number
                                                         </th>
                                                         <th>
                                                             date de creation
@@ -122,6 +122,7 @@
                                                         <th>
                                                             Action
                                                         </th>
+
                                                     </tr>
                                                 </tfoot>
                                             </table>
@@ -130,7 +131,7 @@
                                     <div class="row">
                                         <div class="col-sm-12 col-md-12">
                                             <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
-                                                {{ $services->links() }}
+                                                {{ $customers->links() }}
                                             </div>
                                         </div>
                                     </div>

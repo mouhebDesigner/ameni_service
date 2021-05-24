@@ -758,8 +758,9 @@ a:focus {
 
 .service .service-text {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    height: 60px;
+    height: 150px;
     background: #030f27;
     overflow: hidden;
     white-space: nowrap;
@@ -777,18 +778,20 @@ a:focus {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    height: 100%;
+    line-height: 75px;
 }
 
 .service .service-item a.btn {
-    width: 60px;
+    width: 100%;
     height: 60px;
     padding: 3px 0 0 3px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 60px;
+    font-size: 24px;
     line-height: 60px;
-    font-weight: 100;
+    font-weight: 500;
     color: #030f27;
     background: #fdbe33;
     border-radius: 0;

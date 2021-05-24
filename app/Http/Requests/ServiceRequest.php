@@ -25,10 +25,7 @@ class ServiceRequest extends FormRequest
     {
         return [
             "titre" => "required",
-            "mode" => "required",
-            "unité" => "required",
             "prix" => "required",
-            "catalogue_id" => "required",
             "image" => "required",
             "description" => "required",
         ];

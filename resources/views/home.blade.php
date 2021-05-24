@@ -13,5 +13,14 @@
             </div>
         </div>
     </div>
+    @if(session('success'))
+    <div class="service" id="service">
+        <div class="container">
+            <div class="alert_success">
+                {{ session('success') }}
+            </div>
+        </div>
+    </div>
+    @endif
     @include('includes.service')
 @endsection

@@ -52,6 +52,15 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{ url('admin/customers') }}" class="nav-link @if(Request::is('admin/customers*')) active @endif">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                {{ __('Customers') }}
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{ url('admin/plumbers') }}" class="nav-link @if(Request::is('admin/plumbers*')) active @endif">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
