@@ -88,6 +88,16 @@
               </p>
             </a>
           </li>
+         
+          <li class="nav-item">
+            <a href="{{ url('admin/invoices') }}" class="nav-link @if(Request::is('admin/invoices')) active @endif">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                {{ __('Manage invoices') }}
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+          </li>
           
         </ul>
       @endif

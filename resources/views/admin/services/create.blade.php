@@ -26,6 +26,7 @@
                             <div class="card-body">
                                
                             
+                                
                                 <div class="form-group">
                                     <label for="titre">Title of service</label>
                                     <input type="text" class="form-control" name="titre" value="{{ old('titre') }}" id="titre" placeholder="title of service">

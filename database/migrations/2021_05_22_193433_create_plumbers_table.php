@@ -19,6 +19,7 @@ class CreatePlumbersTable extends Migration
             $table->string('email')->unique();
             $table->string('phone_number');
             $table->string('photo');
+            $table->enum('statut', ['active', 'not_active']);
             $table->timestamps();
         });
     }

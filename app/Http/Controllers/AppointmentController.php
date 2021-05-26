@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use App\Models\Invoice;
 use App\Models\Commande;
 use App\Models\Appointment;
 use Illuminate\Http\Request;
@@ -14,9 +15,11 @@ class AppointmentController extends Controller
     public function __construct(){
         $this->middleware('auth');
     }
-    public function index(){
-        $appointments = Appointment::where('user_id', Auth::id())->get();
 
+    public function index(){
+
+        $appointments = Appointment::where('user_id', Auth::id())->get();
+        
         return view('appointments.index', compact('appointments'));
     }
     public function create($service_id){
@@ -36,6 +39,14 @@ class AppointmentController extends Controller
         $appointment->service_id = $request->service_id;
 
         $appointment->save();
+
+        $invoice = new Invoice();
+
+        $invoice->appointment_id = $appointment->id;
+        $invoice->user_id = Auth::user()->id;
+
+        $invoice->save();
+
 
         return redirect('/home')->with('success', 'Your appointment request has sent to the admin');
     }

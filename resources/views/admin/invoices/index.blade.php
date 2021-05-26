@@ -14,7 +14,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Liste de catalogues</h1>
+                            <h1 class="m-0">List of invoices</h1>
                         </div><!-- /.col -->
                        
                     </div>
@@ -47,9 +47,6 @@
                                                         aria-controls="example1">
                                                     </label>
                                                 </div>
-                                                <a href="{{ url('admin/catalogues/create') }}">
-                                                    <i class="fa fa-plus"></i>
-                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -58,43 +55,41 @@
                                             <table id="example1" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
                                                 <thead>
                                                     <tr>
-                                                        <th>
-                                                            Nom
-                                                        </th>
-                                                       
-                                                        
-                                                        <th>
-                                                            date de creation
-                                                        </th>
-                                                        
-                                                        <th>
-                                                            date de modification
-                                                        </th>
-                                                        <th>
-                                                            Action
-                                                        </th>
-
+                                                        <th>Customer</th>
+                                                        <th>Service</th>
+                                                        <th>Actions</th>
                                                     </tr>
 
                                                 </thead>
                                                 <tbody>
-                                                    @foreach($catalogues as $catalogue)
+                                                    @foreach($invoices as $invoice)
                                                         <tr>
-                                                            <td>{{ $catalogue->nom }}</td>
-                                                            <td>{{ $catalogue->created_at }}</td>
-                                                            <td>{{ $catalogue->updated_at }}</td>
+                                                            <td>{{ $invoice->appointment->name }}</td>
+                                                            <td>{{ $invoice->appointment->service->titre }}</td>
                                                             <td>
                                                                 <div class="d-flex justify-content-around">
-                                                                    <form action="{{ url('admin/catalogues/'.$catalogue->id) }}" method="post">
-                                                                        @csrf
-                                                                        @method('delete')
-                                                                        <button type="submit" class="btn-delete" onclick="return confirm('Voules-vous supprimer ce catalogue')">
-                                                                            <i class="fa fa-trash"></i>
+                                                                    @if($invoice->accept == 1)
+                                                                        <button class="btn btn-success" disabled>
+                                                                        Accept <i class="fa fa-check"></i> 
                                                                         </button>
-                                                                    </form>
-                                                                    <a href="{{ url('admin/catalogues/'.$catalogue->id.'/edit') }}" onclick="return confirm('Voules-vous modifier ce catalogue')">
-                                                                        <i class="fa fa-edit"></i>
+                                                                    @else 
+
+                                                                    <a class="btn btn-success" href="{{ url('admin/invoice/'.$invoice->id.'/accept') }}" onclick="return confirm('Do you want to accept this invoice')">
+                                                                        Accept
                                                                     </a>
+                                                                    @endif
+
+                                                                    @if($invoice->accept == 0)
+                                                                    <button class="btn btn-danger" disabled>
+                                                                        Accept <i class="fa fa-check"></i> 
+                                                                        </button>
+                                                                    @else 
+                                                                    <a class="btn btn-danger" href="{{ url('admin/invoice/'.$invoice->id.'/refuse') }}" onclick="return confirm('Do you want to affect refuse this invoice')">
+                                                                        Refuse 
+                                                                    </a>
+
+                                                                    @endif
+                                                                    
                                                                 </div>
                                                             </td>
                                                         </tr>
@@ -102,18 +97,9 @@
                                                 </tbody>
                                                 <tfoot>
                                                     <tr>
-                                                        <th>
-                                                            Nom
-                                                        </th>
-                                                        <th>
-                                                            date de creation
-                                                        </th>
-                                                        <th>
-                                                            date de modification
-                                                        </th>
-                                                        <th>
-                                                            Action
-                                                        </th>
+                                                    <th>Customer</th>
+                                                        <th>Service</th>
+                                                        <th>Actions</th>
                                                     </tr>
                                                 </tfoot>
                                             </table>
@@ -122,7 +108,7 @@
                                     <div class="row">
                                         <div class="col-sm-12 col-md-12">
                                             <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
-                                                {{ $catalogues->links() }}
+                                                {{ $invoices->links() }}
                                             </div>
                                         </div>
                                     </div>

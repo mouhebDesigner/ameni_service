@@ -22,6 +22,7 @@ class CreateAppointmentsTable extends Migration
             $table->date('date');         
             $table->enum('approuver', ['oui','non'])->nullable();         
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('plumber_id')->nullable()->constrained('plumbers')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('service_id')->constrained('services')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });

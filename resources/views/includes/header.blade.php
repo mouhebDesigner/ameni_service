@@ -62,14 +62,14 @@
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav mr-auto">
                     @guest
-                    <a href="{{ url('/') }}" class="nav-item nav-link active">Home</a>
+                    <a href="{{ url('/') }}" class="nav-item nav-link @if(Request::is('/')) active @endif">Home</a>
                     @else 
-                    <a href="{{ url('/home') }}" class="nav-item nav-link active">Home</a>
+                    <a href="{{ url('/home') }}" class="nav-item nav-link @if(Request::is('/home')) active @endif">Home</a>
 
                     @endif
                     <a href="#service" class="nav-item nav-link">Services</a>
                     @if(Auth::check())
-                        <a href="{{ url('appointments') }}" class="nav-item nav-link">Appointments</a>
+                        <a href="{{ url('appointments') }}" class="nav-item nav-link @if(Request::is('appointments')) active @endif)">Appointments</a>
                     @endif
                 </div>
                 <div class="ml-auto">
@@ -77,11 +77,15 @@
                     <a class="btn btn-login" href="{{ url('login') }}">Login</a>
                     <a class="btn " href="{{ url('register') }}">Register</a>
                     @else 
+                        <a class=" " style="font-weight: bold; color: white" href="{{ url('profile') }}">
+                            {{ Auth::user()->name  }}
+                        </a>
                         <a class="btn" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
-                        </a
+                        </a>
+
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>

@@ -25,8 +25,8 @@ class PlumberRequest extends FormRequest
     {
         return [
             "name" => "required",
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'phone_number' => ['required', 'numeric', 'digits:8', 'unique:users'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:plumbers'],
+            'phone_number' => ['required', 'numeric', 'digits:8', 'unique:plumbers'],
             "photo" => "required",
         ];
     }

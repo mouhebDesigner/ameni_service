@@ -25,7 +25,7 @@
                             @csrf
                             @method('put')
                             <div class="card-body">
-                               
+                
                             
                                 <div class="form-group">
                                     <label for="titre">Title of service</label>

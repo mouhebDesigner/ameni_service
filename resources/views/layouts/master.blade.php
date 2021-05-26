@@ -27,9 +27,10 @@
         <!-- Template Stylesheet -->
         <link href="{{ asset('front/css/style.css') }}" rel="stylesheet">
         <link href="{{ asset('front/css/main.css') }}" rel="stylesheet">
+        <link rel="stylesheet" media="print" href="{{ asset('front/css/print.css') }}" />
     </head>
 
-    <body>
+    <body class="d-print-none">
         @yield('content')
         <!-- JavaScript Libraries -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

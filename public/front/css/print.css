@@ -1,0 +1,6 @@
+.d-print-none{
+    display: none;
+}
+.d-print-block{
+    display: block !important;
+}

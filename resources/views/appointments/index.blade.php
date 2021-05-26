@@ -7,13 +7,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2>Register page</h2>
+                    <h2>Make appointment</h2>
                 </div>
             </div>
         </div>
     </div>
     <div class="contact wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
         <div class="container">
+            @if(session('success'))
+                <div class="section-header text-center alert-done">
+                    <h4>{{ session('success') }}</h4>
+                </div>
+            @endif
             <div class="section-header text-center">
                 <h4>List of my appointment request</h4>
             </div>
@@ -35,7 +40,23 @@
                             <td>{{ $appointment->service->titre }}</td>
                             <td>{{ $appointment->date }}</td>
                             <td>
-                                <a href="{{ url('appointment/'.$appointment->id.'/invoice_request') }}" class="btn btn-primary">Request Invoice</a>
+                                @if($appointment->invoice->requested == "1")
+                                    @if($appointment->invoice->accept == "0")
+                                    <p>
+                                        Invoice requested <i class="fa fa-check"></i>
+                                    </p>
+                                    @else
+                                        <a href="#" onclick="window.print()">
+                                            Show invoice
+                                        </a>
+                                        <div class="d-print-block">
+                                            <p>showed</p>
+                                        </div>
+                                    @endif
+                                @else 
+
+                                    <a href="{{ url('appointment/'.$appointment->invoice->id.'/invoice_request') }}" class="btn btn-primary">Request Invoice</a>
+                                @endif
                             </td>
                         </tr>
                         @endforeach
@@ -45,4 +66,5 @@
             </div>
         </div>
     </div>
+   
 @endsection
