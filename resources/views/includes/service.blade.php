@@ -1,8 +1,8 @@
 <div class="service" id="service">
     <div class="container">
         <div class="section-header text-center">
-            <p>Nos services</p>
-            <h2>On offre services</h2>
+            <p>Our services</p>
+            <h2>We offre services</h2>
         </div>
         <div class="row">
             @foreach(App\Models\Service::all() as $service)
