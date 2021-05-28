@@ -34,7 +34,18 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($appointments as $appointment)
+                        @php 
+                            $ids = "";
+                        @endphp
+                        @foreach($appointments as $key => $appointment)
+                            @php 
+                                if($key == 0){
+                                    $ids .= $appointment->id;
+                                }else {
+
+                                    $ids .= '.'.$appointment->id;
+                                }
+                            @endphp
                         <tr>
                             <th scope="row">{{ $appointment->id }}</th>
                             <td>{{ $appointment->service->titre }}</td>
@@ -46,9 +57,9 @@
                                         Invoice requested <i class="fa fa-check"></i>
                                     </p>
                                     @else
-                                        <a href="#" onclick="window.print()">
+                                        <button value="{{ $appointment->id }}" id="showed{{ $appointment->id }}">
                                             Show invoice
-                                        </a>
+                                        </button>
                                         <div class="d-print-block">
                                             <p>showed</p>
                                         </div>
@@ -66,5 +77,43 @@
             </div>
         </div>
     </div>
+    @section('print')
+            <h2 class="text-center invoice_title">Invoice</h2>
+            @foreach($appointments as $appointment)
+                <table class="table appointment_body appointment" id="invoice{{ $appointment->id }}">
+                    <tr>
+                        <th>#</th>
+                        <th>Service</th>
+                        <th>Plumber</th>
+                        <th>Price</th>
+                        <th>Date</th>
+                    </tr>
+                    <tr>
+                        <td>{{ $appointment->id }}</td>
+                        <td>{{ $appointment->service->titre }}</td>
+                        <td>{{ $appointment->plumber->name }}</td>
+                        <td>{{ $appointment->service->prix }}</td>
+                        <td>{{ $appointment->created_at->diffForHumans() }}</td>
+                    </tr>
+                </table>
+            @endforeach
+    @endsection
    
+@endsection
+
+
+@section('script')
+    <script>
+        var ids = "<?php echo $ids; ?>";
+        var ids_table = ids.split(".");
+
+        ids_table.forEach((item, index) => {
+            $('#showed'+item).click(function(){
+                $('#invoice'+item).addClass("d-print-block");
+                $(".appointment:not(#invoice"+item+")").removeClass("d-print-block");
+                window.print();
+            });
+        });
+    </script>
+
 @endsection

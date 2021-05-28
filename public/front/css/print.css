@@ -4,3 +4,16 @@
 .d-print-block{
     display: block !important;
 }
+
+
+
+.d-print-block{
+    display: none;
+}
+.d-print__none_important{
+    display: none !important;
+}
+
+.invoice_title{
+    display: block;
+}

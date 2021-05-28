@@ -2245,3 +2245,10 @@ a:focus {
     margin: 0px;
     line-height: 50px;
 }
+.appointment_body{
+    display: none;
+}
+
+.invoice_title{
+    display: none;
+}

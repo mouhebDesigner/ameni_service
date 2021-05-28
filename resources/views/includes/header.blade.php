@@ -67,7 +67,7 @@
                     <a href="{{ url('/home') }}" class="nav-item nav-link @if(Request::is('/home')) active @endif">Home</a>
 
                     @endif
-                    <a href="#service" class="nav-item nav-link">Services</a>
+                    <a href="{{ url('/#service') }}" class="nav-item nav-link">Services</a>
                     @if(Auth::check())
                         <a href="{{ url('appointments') }}" class="nav-item nav-link @if(Request::is('appointments')) active @endif)">Appointments</a>
                     @endif

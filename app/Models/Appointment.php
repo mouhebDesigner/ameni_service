@@ -11,6 +11,10 @@ class Appointment extends Model
     public function service(){
         return $this->belongsTo(Service::class);
     }
+    
+    public function plumber(){
+        return $this->belongsTo(Plumber::class);
+    }
 
     public function invoice(){
         return $this->hasOne(Invoice::class);

@@ -81,13 +81,12 @@
 
                                                                     @if($invoice->accept == 0)
                                                                     <button class="btn btn-danger" disabled>
-                                                                        Accept <i class="fa fa-check"></i> 
+                                                                        Refuse <i class="fa fa-check"></i> 
                                                                         </button>
                                                                     @else 
                                                                     <a class="btn btn-danger" href="{{ url('admin/invoice/'.$invoice->id.'/refuse') }}" onclick="return confirm('Do you want to affect refuse this invoice')">
                                                                         Refuse 
                                                                     </a>
-
                                                                     @endif
                                                                     
                                                                 </div>
