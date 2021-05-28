@@ -83,6 +83,7 @@
                 <table class="table appointment_body appointment" id="invoice{{ $appointment->id }}">
                     <tr>
                         <th>#</th>
+                        <th>Customer</th>
                         <th>Service</th>
                         <th>Plumber</th>
                         <th>Price</th>
@@ -90,10 +91,11 @@
                     </tr>
                     <tr>
                         <td>{{ $appointment->id }}</td>
+                        <td>{{ $appointment->user->name }}</td>
                         <td>{{ $appointment->service->titre }}</td>
                         <td>{{ $appointment->plumber->name }}</td>
                         <td>{{ $appointment->service->prix }}</td>
-                        <td>{{ $appointment->created_at->diffForHumans() }}</td>
+                        <td>{{ $appointment->created_at }}</td>
                     </tr>
                 </table>
             @endforeach
